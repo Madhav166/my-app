@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.navbarStyle {
+  padding-left: 5;
+  display: "flex";
+  column-gap: 10;
+  /* border: 2px solid black; */
+}
