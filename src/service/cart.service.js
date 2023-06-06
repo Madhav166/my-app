@@ -1,9 +1,9 @@
 import request from "./request";
 
-const ENDPOINT = "api/cart";
+const Carturl = "api/cart";
 
 const add = async (data) => {
-  const url = `${ENDPOINT}`;
+  const url = `${Carturl}`;
   return request
     .post(url, data)
     .then((res) => {
@@ -15,14 +15,14 @@ const add = async (data) => {
 };
 
 const getList = async (id) => {
-  const url = `${ENDPOINT}?userId=${id}`;
+  const url = `${Carturl}?userId=${id}`;
   return request.get(url).then((res) => {
     return res;
   });
 };
 
 const updateItem = async (data) => {
-  const url = `${ENDPOINT}`;
+  const url = `${Carturl}`;
   return request
     .put(url, data)
     .then((res) => {
@@ -34,7 +34,7 @@ const updateItem = async (data) => {
 };
 
 const removeItem = async (id) => {
-  const url = `${ENDPOINT}?id=${id}`;
+  const url = `${Carturl}?id=${id}`;
   return request
     .delete(url)
     .then((res) => {

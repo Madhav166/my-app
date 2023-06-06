@@ -1,11 +1,11 @@
 import request from "./request";
 
-const ENDPOINT = "api/category";
+const categoryURL = "api/category";
 
 const getAll = async (params) => {
-  let url = `${ENDPOINT}/all`;
+  let url = `${categoryURL}/all`;
   if (params) {
-    url = `${ENDPOINT}`;
+    url = `${categoryURL}`;
   }
   return request.get(url, { params }).then((res) => {
     return res;
@@ -13,14 +13,14 @@ const getAll = async (params) => {
 };
 
 const getById = async (id) => {
-  const url = `${ENDPOINT}/byId?id=${id}`;
+  const url = `${categoryURL}/byId?id=${id}`;
   return request.get(url).then((res) => {
     return res;
   });
 };
 
 const deleteCategory = async (id) => {
-  const url = `${ENDPOINT}?id=${id}`;
+  const url = `${categoryURL}?id=${id}`;
   return request.delete(url).then((res) => {
     return res;
   });
@@ -28,12 +28,12 @@ const deleteCategory = async (id) => {
 
 const save = async (data) => {
   if (data.id) {
-    const url = `${ENDPOINT}`;
+    const url = `${categoryURL}`;
     return request.put(url, data).then((res) => {
       return res;
     });
   } else {
-    const url = `${ENDPOINT}`;
+    const url = `${categoryURL}`;
     return request.post(url, data).then((res) => {
       return res;
     });
